@@ -1,5 +1,7 @@
 require './lib/contact'
 require './lib/phones'
+require './lib/emails'
+require './lib/addresses'
 
 def address_book
   loop do

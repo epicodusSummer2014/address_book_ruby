@@ -1,6 +1,8 @@
 require 'rspec'
 require 'contact'
 require 'phones'
+require 'emails'
+require 'addresses'
 
 describe Contact do
   before do
@@ -60,3 +62,35 @@ describe Phones do
     test_contact.phones[0].phone.should eq '325235235'
   end
 end
+
+describe Emails do
+  it 'is initialized with an email' do
+    test_email = Emails.new('asdlgk@gmail.com')
+    test_email.should be_an_instance_of Emails
+  end
+
+  it 'retrieves an email from a contact' do
+    test_contact = Contact.new('joanne')
+    test_contact.add_email('ddag@gmail.com')
+    test_contact.emails[0].email.should eq 'ddag@gmail.com'
+  end
+end
+
+describe Addresses do
+  it 'is initialized with an address' do
+    test_address = Addresses.new('4234234234')
+    test_address.should be_an_instance_of Addresses
+  end
+
+  it 'retrieves an address from a contact' do
+    test_contact = Contact.new('joanne')
+    test_contact.add_address('3252 Main St.')
+    test_contact.addresses[0].address.should eq '3252 Main St.'
+  end
+end
+
+
+
+
+
+

@@ -1,4 +1,6 @@
 require 'phones'
+require 'emails'
+require 'addresses'
 
 class Contact
   @@all_contacts = []
@@ -37,5 +39,23 @@ class Contact
   def add_phone(user_phone)
     new_phone = Phones.new(user_phone)
     @phones << new_phone
+  end
+
+  def emails
+    @emails
+  end
+
+  def add_email(user_email)
+    new_email = Emails.new(user_email)
+    @emails << new_email
+  end
+
+  def addresses
+    @addresses
+  end
+
+  def add_address(user_address)
+    new_address = Addresses.new(user_address)
+    @addresses << new_address
   end
 end
